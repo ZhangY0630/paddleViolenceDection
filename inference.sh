@@ -1,0 +1,2 @@
+#!/bin/bash
+python PaddleVideo/tools/predict.py --input_file $1  --config PaddleVideo/configs/recognition/movinet/movinet_k400_frame.yaml --model_file inference/MoViNet/MoViNet.pdmodel --params_file inference/MoViNet/MoViNet.pdiparams --use_gpu=True --use_tensorrt=False
