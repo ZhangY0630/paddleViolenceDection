@@ -23,14 +23,18 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/">未处理</a>
+              <a class="nav-link {{ index_status[0] }}" aria-current="page" href="/">未处理</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">已处理</a>
+              <a class="nav-link {{ index_status[1] }}" href="/processed">已处理</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
+    <div id="body" class="container-fluid">
+    <p class="lead" style="margin-top: 8px">总计： {{ videos|length }}</p>
+        {%  block body %}{% endblock %}
+    </div>
   </body>
 </html>

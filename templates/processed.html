@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% from 'components.html' import render_video_card %}
+{% block body %}
+  <div class="row row-cols-md-2 row-cols-sm-1">
+    {% for video in videos %}
+      <div class="col">
+        <form action="/process_video/{{ video }}" method="GET">
+          <input type="hidden" name="setval" value="0"/>
+          {{ render_video_card(video, "标记为未处理") }}
+        </form>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

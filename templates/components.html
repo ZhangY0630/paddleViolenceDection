@@ -1,0 +1,11 @@
+{% macro render_video_card(name, btn_txt) %}
+  <div class="card" style="margin: 8px;">
+    <div class="card-body">
+      <h5 class="card-title">{{ name }}</h5>
+        <video width="100%" controls>
+          <source src="{{ url_for('static', filename='videos/'+name) }}" type="video/mp4">
+        </video>
+      <button class="btn btn-primary" style="margin-top: 16px">{{ btn_txt }}</button>
+    </div>
+  </div>
+{% endmacro %}
